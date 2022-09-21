@@ -9,8 +9,8 @@ const userSchema = require('./userSchema')
 const adminSchema = require('./adminSchema')
 
 const app = express() 
-const mongodb = process.env.MONGODB
-const secretkey = process.env.SECRET
+const mongodb = 'mongodb+srv://streamlivrweb:muUixqBiYXjEpSZP@streamlivr.rswzwob.mongodb.net/Streamlivr'
+const secretkey = 'streamlivrNFT$STVR'
 mongoose.connect(mongodb)
 .then(() => {
    console.log('Connection successful')
