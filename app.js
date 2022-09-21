@@ -9,8 +9,8 @@ const userSchema = require('./userSchema')
 const adminSchema = require('./adminSchema')
 
 const app = express() 
-const mongodb = 'mongodb+srv://streamlivrweb:muUixqBiYXjEpSZP@streamlivr.rswzwob.mongodb.net/Streamlivr'
-const secretkey = 'streamlivrNFT$STVR'
+const mongodb = process.env.MONGODB
+const secretkey = process.env.SECRET
 mongoose.connect(mongodb)
 .then(() => {
    console.log('Connection successful')
@@ -80,26 +80,25 @@ app.post('/waitlist', (req,res)=>{
 //     res.redirect('/admin')
 // })
 
-app.get('/admin', async (req,res)=>{
-    if(req.cookies.token){
-        const token = req.cookies.token
-        try{
-            const user = jwt.verify(token, secretkey)
-      
-            req.user = user
-            // console.log(user)
-            const waitlist = await userSchema.find()
-
-            res.render('admin', {users: waitlist})
-        }
-        catch(err){
-            res.clearCookie('token')
-            return res.render('login')
-        }
-    } else{
-        res.render('login')
-    }
+app.get('/admin',protectRoute, async (req,res)=>{
+    const waitlist = await userSchema.find()
+    res.render('admin', {users: waitlist})
 })
+
+function protectRoute(req, res, next){
+    const token = req.cookies.token
+    try{
+        const user = jwt.verify(token, secretkey)
+
+        req.user = user
+        // console.log(req.user)
+        next()
+    }
+    catch(err){
+        res.clearCookie('token')
+        return res.render('login')
+    }
+}
 
 app.post('/login', (req,res)=>{
     const loginInfo = req.body
@@ -123,7 +122,7 @@ app.post('/login', (req,res)=>{
                 }
             }
   
-            const token = await jwt.sign(payload, secretkey, {
+            const token = jwt.sign(payload, secretkey, {
                 expiresIn: '3600s'
             } )
             
