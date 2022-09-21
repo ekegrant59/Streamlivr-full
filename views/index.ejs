@@ -59,7 +59,7 @@
              <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             <!-- </div> -->
             <div class="modal-body">
-                <form id="form" action="/waitlist" method="post">
+                <form id="form" >
                     
                     <input type="text" id="name" placeholder="Creator Name" name="name" required> <br>
                     <input type="email" id="email" placeholder="Email" name="email" required> <br>
@@ -393,25 +393,25 @@
     const form = document.getElementById('form');
     const disp = document.querySelector('.display')
  
-    // form.addEventListener('submit', function(e) {
-    //     e.preventDefault()
-    //     // Create new FormData object:
-    //     const formData = new FormData(form);
-    //     // Convert formData object to URL-encoded string:
-    //     const payload = new URLSearchParams(formData);
-    //     // Post the payload using Fetch:
-    //     fetch('/waitlist', {
-    //     method: 'POST',
-    //     body: payload,
-    //     })
-    //     .then(res => res.json())
-    //     // .then(data => console.log(data))
-    //     disp.style.display = 'block'
-    //     document.querySelector('#name').style.display = 'none'
-    //     document.querySelector('#email').style.display = 'none'
-    //     document.querySelector('#select').style.display = 'none'
-    //     document.querySelector('#join').style.display = 'none'
-    // })
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        // Create new FormData object:
+        const formData = new FormData(form);
+        // Convert formData object to URL-encoded string:
+        const payload = new URLSearchParams(formData);
+        // Post the payload using Fetch:
+        fetch('/waitlist', {
+        method: 'POST',
+        body: payload,
+        })
+        .then(res => res.json())
+        // .then(data => console.log(data))
+        disp.style.display = 'block'
+        document.querySelector('#name').style.display = 'none'
+        document.querySelector('#email').style.display = 'none'
+        document.querySelector('#select').style.display = 'none'
+        document.querySelector('#join').style.display = 'none'
+    })
 </script>
 
 </html>
