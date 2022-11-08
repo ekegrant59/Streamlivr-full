@@ -1,6 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    /* overflow-x: hidden; */
 }
 html {
     scroll-behavior: smooth;
@@ -87,62 +88,16 @@ body{
     font-size: 45px;
     font-weight: bold;
     visibility: visible;
-    color: whitesmoke
-}
-
-.fadeIn{
-    animation-delay: 0.5s;
-    animation-name: fadeIn;
-    animation-duration: 2s;
-}
-
-@keyframes fadeIn{
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.fadeInLeft{
-    visibility: visible;
-    animation-delay: 0.5s;
-    animation-name: fadeInLeft;
-    animation-duration: 2s;
-}
-
-@keyframes fadeInLeft{
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.fadeInUp{
-    visibility: visible;
-    animation-delay: 0.5s;
-    animation-name: fadeUp;
-    animation-duration: 2s;
-}
-@keyframes fadeUp{
-    0% {
-        opacity: 0;
-        transform: translateY(20px)
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: whitesmoke;
 }
 
 .first_main_div span{
     font-weight: 100;
     font-size: 35px;
+}
+#change{
+    font-size: 40px;
+    font-weight: bold; 
 }
 
 .first_main_buttons{
@@ -286,6 +241,7 @@ select{
 .third_main{
     background-color: black;
     height: auto;
+    overflow: hidden;
 }
 
 .third_main_title, .users{
@@ -355,6 +311,7 @@ select{
     background-position: center;
     background-size: contain;
     background-repeat: repeat;
+    overflow-x: hidden;
 }
 
 .users{
