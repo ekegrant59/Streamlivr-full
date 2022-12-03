@@ -17,24 +17,24 @@
 </head>
 <body>
     <h1 class="text-center mt-3">WAITLISTED USERS</h1>
-    <div class="row container-fluid text-center fs-4 mt-3">
-        <div class="col">
+    <div class="row container-fluid text-center mt-3 listed">
+        <div class="col-3">
             <p >NAME</p>
         </div>
-        <div class="col">
+        <div class="col-6 no-pad">
             <p>EMAIL</p>
         </div>
-        <div class="col">
+        <div class="col-3 no-pad">
             <p>CATEGORY</p>
         </div>
     </div>
     <ol>
         <% users.forEach(user =>{ %>
             <li class="mt-1">
-                <div class="row container-fluid text-center">
-                    <div class="col"><%= user.name %> </div>
-                    <div class="col"><%= user.email %></div>
-                    <div class="col"><%= user.category %></div>
+                <div class="row container-fluid text-center listed">
+                    <div class="col-3 wrap2"><%= user.name %> </div>
+                    <div class="col-6 wrap"><%= user.email %></div>
+                    <div class="col-3 wrap text-center no-pad" ><%= user.category %></div>
                 </div>
             </li>
         <% }) %>

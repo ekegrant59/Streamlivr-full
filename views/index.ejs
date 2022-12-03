@@ -82,6 +82,8 @@
                         <option value="Creator">Content Creator</option>
                         <option value="Artiste">Artiste</option>
                     </select> <br>
+                    <p class="sel_Error">Please select a valid Catergory</p>
+
                     
                     <button type="submit" id="join">Join</button>
                 </form>
@@ -389,28 +391,56 @@
 
     const form = document.getElementById('form');
     const disp = document.querySelector('.display')
+    const selError = document.querySelector('.sel_Error')
  
     form.addEventListener('submit', function(e) {
         e.preventDefault()
-        // Create new FormData object:
-        const formData = new FormData(form);
-        // Convert formData object to URL-encoded string:
-        const payload = new URLSearchParams(formData);
-        // Post the payload using Fetch:
-        fetch('/waitlist', {
-        method: 'POST',
-        body: payload,
-        })
-        .then(res => res.json())
-        // .then(data => console.log(data))
-        disp.style.display = 'block'
-        document.querySelector('#name').style.display = 'none'
-        document.querySelector('#email').style.display = 'none'
-        document.querySelector('#select').style.display = 'none'
-        document.querySelector('#join').style.display = 'none'
-    })
-</script>
-<script>
+        let selval = document.querySelector('#select').value
+        if(selval == 'Category'){
+            selError.style.display = 'block'
+        } else{
+            selError.style.display = 'none'
+            //Create new FormData object:
+            const formData = new FormData(form);
+            // Convert formData object to URL-encoded string:
+            const payload = new URLSearchParams(formData);
+            // Post the payload using Fetch:
+            fetch('/waitlist', {
+            method: 'POST',
+            body: payload,
+            })
+            .then(res => res.json())
+            // .then(data => console.log(data))
+            disp.style.display = 'block'
+            document.querySelector('#name').style.display = 'none'
+            document.querySelector('#email').style.display = 'none'
+            document.querySelector('#select').style.display = 'none'
+            document.querySelector('#join').style.display = 'none'
+        }
+
+        // if(){
+
+        // }else{
+        //     // Create new FormData object:
+        // const formData = new FormData(form);
+        // // Convert formData object to URL-encoded string:
+        // const payload = new URLSearchParams(formData);
+        // // Post the payload using Fetch:
+        // fetch('/waitlist', {
+        // method: 'POST',
+        // body: payload,
+        // })
+        // .then(res => res.json())
+        // // .then(data => console.log(data))
+        // disp.style.display = 'block'
+        // document.querySelector('#name').style.display = 'none'
+        // document.querySelector('#email').style.display = 'none'
+        // document.querySelector('#select').style.display = 'none'
+        // document.querySelector('#join').style.display = 'none'
+        }
+    )
+  </script>
+ <script>
     AOS.init();
   </script>
 

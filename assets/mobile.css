@@ -1,3 +1,6 @@
+body{
+    width: auto;
+}
 .nav_logo{
     width: 150px;
     height: 40px;
@@ -291,4 +294,21 @@ footer{
 
 .copyright{
     font-size: 6px;
+}
+.wrap{
+    word-wrap:break-word;
+}
+.wrap2{
+    word-wrap: normal;
+    overflow-x: hidden;
+}
+
+
+.listed{
+    margin: 0;
+    padding-right: 0;
+}
+
+.no-pad{
+    padding: 0;
 }

@@ -462,3 +462,8 @@ footer{
 .copyright{
     font-size: 12px;
 }
+.sel_Error{
+    display: none;
+    font-size: 15px;
+    color: red;
+}

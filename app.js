@@ -48,7 +48,7 @@ app.post('/waitlist', (req,res)=>{
         }
     }
 
-    res.redirect('/')
+    // res.redirect('/')
 })
 
 // app.get('/register', (req,res)=>{
