@@ -30,7 +30,6 @@ app.use(cookieParser())
 
 app.get('/', function(req,res){ 
     res.render('index')
-    console.log(req.originalUrl)
 
 })
 app.post('/waitlist', (req,res)=>{
