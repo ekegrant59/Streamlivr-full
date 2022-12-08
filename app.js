@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
-const secure = require('ssl-express-www')
+const secure = require('express-enforces-ssl')
 const userSchema = require('./userSchema')
 const adminSchema = require('./adminSchema')
 
@@ -19,14 +19,18 @@ mongoose.connect(mongodb)
     console.log(err, "Connection failed")
 })
 
+
+app.enable('trust proxy')
+app.use(secure())
 app.use('/assets', express.static('assets')) 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
-app.use(secure)
+
 
 app.get('/', function(req,res){ 
     res.render('index')
+    console.log(req.originalUrl)
 
 })
 app.post('/waitlist', (req,res)=>{
@@ -143,6 +147,7 @@ app.post('/login', (req,res)=>{
   .catch((err)=>{console.log(err)})
 })
 const port = process.env.PORT || 3000
+
 app.listen(port, ()=>{
     console.log(`App started on port ${port}`)
 } )
