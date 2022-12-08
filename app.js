@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
+const secure = require('ssl-express-www')
 const userSchema = require('./userSchema')
 const adminSchema = require('./adminSchema')
 
@@ -22,6 +23,7 @@ app.use('/assets', express.static('assets'))
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
+app.use(secure)
 
 app.get('/', function(req,res){ 
     res.render('index')
