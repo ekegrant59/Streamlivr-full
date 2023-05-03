@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamLivr</title>
+    <%- include('partials/head-links') %>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKQ47J5BPB"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,58 +16,10 @@
 
     gtag('config', 'G-QKQ47J5BPB');
     </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamLivr</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../assets/style.css" >
-    <link rel="stylesheet" href="../assets/mobile.css" media="only screen and (max-width: 480px)">
-    <link rel="shortcut icon" href="../assets/pics/streamlivr.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body >
 
-    <nav class="navbar navbar-expand-xl sticky-top navbar-custom align-middle " >
-        <div class="container-fluid  px-md-5 px-md-3 ms-md-3 ms-2 me-md-auto me-0 w-100">
-            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-          <a class="navbar-brand py-0 " href="/">
-            <img src="../assets/pics/streamliver-crop.png" alt="logo" class="nav_logo">
-          </a>
-          <div class="collapse navbar-collapse navbar-collapse-custom w-100 " id="navbarSupportedContent">
-            <ul class="navbar-nav text-light mb-3 mb-xl-0 mt-3 mt-xl-0 ms-auto text-center">
-              <li class="nav-item px-3 ms-xl-5 mx-sm-0">
-                <a class="nav-link text-light" href="http://docs.streamlivr.com/" target="_blank">Lite Doc</a>
-              </li>
-              <li class="nav-item px-3 ">
-                <a class="nav-link text-light " href="https://medium.com/@streamlivrapp" target="_blank">Blog</a>
-              </li>
-              </li>
-              <li class="nav-item px-3">
-                <a class="nav-link text-light " href="http://t.me/streamlivr">Join Community</a>
-              </li>
-              <!-- <li class="nav-item px-3   mx-sm-0">
-                <a class="nav-link text-light" href="#"> Streamlivr Coin</a> -->
-              <li class="nav-item px-3 me-xl-4  mx-0">
-                <a class="nav-link text-light" href="#">Download App</a>
-              <li class="nav-item ps-xl-4 ms-xl-5  mx-0 w-sm-25%  ">
-                <button class="btn-custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Join waitlist</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <%- include('partials/navbar') %>
 
       <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -111,12 +69,13 @@
                     </div>
         
                     <div class="first_main_buttons" >
+                        <button class="join_waitlist" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Join waitlist</button> <br>
                         <span class="learn_more" ><a href="http://docs.streamlivr.com/" target="_blank">Learn more</a></span> <br>
-                        <button class="join_waitlist" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >Join waitlist</button> 
+                        <button class="join_waitlist"><a href="https://drive.google.com/drive/folders/1ssWPX2eAsNqOUX-9OpaURdeji5NXf-h6" target="_blank">Launch App</a></button>
                     </div>
                 </div>
             </div>
-            <p class="small_text pb-5" >Convert your livestream to NFTs and earn $STVR on the go as you stream and your content is streamed. Swap your $STVR for fiat.</p>
+            <p class="small_text pb-5 mt-md-5" >Convert your livestream to NFTs and earn $STVR on the go as you stream and your content is streamed. Swap your $STVR for fiat.</p>
         </div>
 
         <div class="second_main container-fluid" id="discover">
@@ -214,33 +173,28 @@
                         <p class="team_bio" data-aos="zoom-out-down" data-aos-duration="1600">Driven by the vision of creating a new future that puts creators first and employs DeFi to enable everyone profit and make a living from their potential.</p>
                     </div>
                     <div class="col text-center me-md-2" data-aos="zoom-in-down" data-aos-duration="1600">
-                        <img src="../assets/pics/founder-circle.png" alt="Team Member" class="team_pic">
-                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/joshua-ehizibue-4b604a150">Joshua Ehizibue</a></span> <br> Founder & Project Manager</p>
+                        <img src="../assets/pics/Joshua.jpeg" alt="Team Member" class="team_pic edit_pic">
+                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/joshua-ehizibue-4b604a150" target="_blank">Joshua Ehizibue</a></span> <br> CEO & Product Manager</p>
                     </div>
                     <div class="col text-center" data-aos="zoom-in-down" data-aos-duration="1400">
-                        <img src="../assets/pics/Musa.png" alt="Team Member"class="team_pic" >
-                        <p class="team_about "> <span > <a href=""> Musa Mukhtar Muhammad </a></span> <br>  Blockchain Developer</p>
+                        <img src="../assets/pics/mahmud.jpg" alt="Team Member"class="team_pic edit_pic" style="scale: 0.9;" >
+                        <p class="team_about "> <span > <a href=""> Mahmud Bello </a></span> <br>  CTO & Blockchain Developer</p>
+                    </div>
+                    <div class="col text-center" data-aos="zoom-in-down" data-aos-duration="1600">
+                        <img src="../assets/pics/Tolu.jpeg" alt="Team Member"class="team_pic edit_pic" style="scale: 0.9;">
+                        <p class="team_about "> <span > <a href="https://www.linkedin.com/in/tolulopefasanmi" target="_blank">Tolu Fasanmi </a></span> <br> CMO & Community Manager</p>
                     </div>
                     <div class="col text-center" data-aos="zoom-in-down" data-aos-duration="1800">
                         <img src="../assets/pics/brand-circle.png" alt="Team Member"class="team_pic" >
-                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/dikedarion">Dike Gift chukwuebuka</a></span> <br>Brand Designer </p>                       
+                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/dikedarion" target="_blank">Dike Darion</a></span> <br>Brand Designer </p>                      
                     </div>
-                    <div class="col text-center" data-aos="zoom-in-down" data-aos-duration="1200">
-                        <img src="../assets/pics/gfx-circcle.png" alt="Team Member" class="team_pic" >
-                        <p class="team_about text-center "> <span ><a href="https://www.linkedin.com/in/ebuka-ogbonna-8065ab246">Ogbonna Ebuka</a></span> <br> UI/UX Designer 1</p>
+                    <div class="col text-center" data-aos="zoom-in-down" data-aos-duration="1800">
+                        <img src="../assets/pics/grant.jpg" alt="Team Member" class="team_pic edit_pic" style="scale: 0.9;">
+                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/grant-eke-215103244 " target="_blank">Eke Grant</a> </span> <br> Full Stack Developer</p>
                     </div>
+                    
                 </div>
 
-                <div class="row mt-5 mx-5 text-center" >
-                    <div class="col-lg-4 col" data-aos="zoom-in-down" data-aos-duration="1600">
-                        <img src="../assets/pics/tolu.png" alt="Team Member"class="team_pic" >
-                        <p class="team_about "> <span > <a href="https://www.linkedin.com/in/tolulopefasanmi">Tolu Fasanmi </a></span> <br> Community Manager 1</p>
-                    </div>
-                    <div class="col-lg-4 col" data-aos="zoom-in-down" data-aos-duration="1800">
-                        <img src="../assets/pics/tauheed.png" alt="Team Member"class="team_pic" >
-                        <p class="team_about "> <span ><a href="https://www.linkedin.com/in/tauheed-muhammad-koro-89b942219">Muhammad Tauheed Koro</a> </span> <br> Community Manager 2 </p>
-                    </div>
-                </div>
             </div>
             <p class="title1 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">GOALS & PLANS</p>
 
@@ -307,37 +261,20 @@
                 </div>
             </div>
     
-            <div class="tokenomics text-center container-fluid" id="marketplace">
+            <div class="tokenomics text-center container-fluid mb-0 pb-2" id="marketplace">
                 <p class="token1" data-aos="zoom-in-up" data-aos-duration="1600">TOKEN DISTRIBUTION</p>
                 <p class="token2" data-aos="zoom-in-down" data-aos-duration="1600" >TOKENOMICS</p>
     
                 <div class="token_img container-fluid" data-aos="zoom-out" data-aos-duration="1800">
                     <img src="../assets/pics/TOKENOMICS.png" alt="TOKENOMICS" class="img-fluid">
                 </div>
+                <button class="join_waitlist text-center mt-5"><a href="https://drive.google.com/drive/folders/1ssWPX2eAsNqOUX-9OpaURdeji5NXf-h6" target="_blank" style="text-decoration: none; color: white;">Launch App</a></button>
             </div>
            
         </div>
 
         
-    <footer class="container-fluid">
-        <div class="row  text-center align-items-center">
-            <div class="col ">
-                <p style="margin-bottom: 10px;">FOLLOW US</p>
-                <div class="icons">
-                <a href="https://twitter.com/streamlivrapp" target="_blank"><i class="bi bi-twitter"></i></a>
-                <a href="http://t.me/streamlivr" target="_blank"><i class="bi bi-telegram"></i></a>
-                <a href="https://discord.gg/gRburjY8n5"><i class="bi bi-discord"></i></a> 
-                <a href="https://github.com/streamlivr" target="_blank"><i class="bi bi-github"></i></a>
-                </div>
-            </div>
-            <!-- <div class="col">
-                <a href=""><img src="./pics/both.png" alt=""class="footer_img"></a>
-            </div> -->
-            <div class="col">
-                <p style="margin-bottom: 0px;" class="copyright">&copy; 2022 Streamlivr Corp, <br> a subsidiary of Urban Boulevard Records Ventures.</p>
-            </div>
-        </div>
-    </footer>
+        <%- include('partials/footer') %>
     
 </div>
 </body>

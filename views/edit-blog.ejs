@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+    <%- include('partials/head-links') %>
+</head>
+<body>
+    <div class="d-flex align-items-center">
+        <a href="/admin" class="btn btn-primary ms-4">Waitlist</a>
+        <h3 class="text-center my-4 mx-auto">Edit BLog</h3>
+        <a href="/admin/blog" class="btn btn-primary me-4">View Blogs</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-8 mx-auto">
+            <form action="/editblog" method="post">
+                <div >
+                    <%- messages('messages', locals) %> 
+                </div>
+                <input type="text" name="id" value="<%= blog.id %>" class="d-none">
+                <div class="row mb-3">
+                    <label for="inputTitle" class="col-12 col-form-label mb-0">Title:</label>
+                    <div class="col-12">
+                        <input type="text" class="form-control" id="inputTitle" name="title" required value="<%= blog.title %>">
+                    </div>           
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputDate" class="col-12 col-form-label mb-0">Date:</label>
+                    <div class="col-12">
+                        <input type="date" class="form-control" id="inputDate" name="date" required value="<%= blog.date %>">
+                    </div>          
+                </div>
+
+                <div class="row mb-4">
+                      <label for="inputSummary" class="col-12 col-form-label mb-0" required>Brief Description:</label>
+                      <div class="col-12">
+                        <textarea name="summary" id="inputSummary" cols="30" rows="3" class="form-control text-dark"><%= blog.summary %></textarea>
+                       </div>             
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label mb-0" for="inputCategory" >Category</label>
+                    <select class="form-select" id="inputCategory" name="category">
+                      <option selected value="<%= blog.category %>"><%= blog.category %></option>
+                      <option value="news">
+                        News
+                      </option>
+                      <option value="shows">
+                        Shows
+                      </option>
+                      <option value="music">
+                        Music
+                      </option>
+                      <option value="others">
+                        Others
+                      </option>
+                    </select>
+                </div>
+
+                <div class="my-3 text-center">
+                    <button class="btn btn-primary btn-lg" type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
