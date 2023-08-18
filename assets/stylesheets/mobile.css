@@ -1,0 +1,26 @@
+body{
+    width: auto;
+}
+.nav_logo{
+    width: 150px;
+    height: 40px;
+}
+
+.lh-sm{
+    line-height: 2 !important;
+}
+
+.fs-6{
+    font-size: 13px !important;
+}
+
+.img-mobile{
+    display: block;
+}
+
+.bg1{
+    background: url(/assets/pics/IMAGE\ \(3\).png), lightgray -122.172px 0px / 114.043% 123.9% no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+    background-size: cover;
+}
