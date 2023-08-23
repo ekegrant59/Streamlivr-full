@@ -25,6 +25,10 @@ body{
     color: rgb(0, 0, 0);
 }
 
+.navbar-collapse{
+    z-index: 9999;
+}
+
 .nav_logo{
     width: 200px;
     height: 50px;
@@ -74,26 +78,7 @@ body{
     background: linear-gradient(to right, rgb(0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-@media screen and (max-width : 480px){
-    .img-gradient, .img-gradient2{
-        position: relative
-    }
-    
-    .img-gradient::after{
-        content: '';
-        position: absolute;
-        left: 0; top: 0;
-        width: 100%; height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgb(0, 0, 0));
-    }
-    .img-gradient2::after{
-        content: '';
-        position: absolute;
-        left: 0; top: 0;
-        width: 100%; height: 100%;
-        background: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-    }
-}
+
 
 .bg1{
     background: url(/assets/pics/IMAGE\ \(3\).png), lightgray -122.172px 0px / 114.043% 123.9% no-repeat;
@@ -129,6 +114,7 @@ body{
 
 .card{
     --bs-card-bg: #1A1A1A;
+    --bs-card-color: white;
 }
 
 .roadmap{
@@ -157,3 +143,73 @@ body{
 .team a:hover{
     color: #0092E3;
 }
+
+.youtube{
+    width: 890px;
+    height: 504px;
+}
+
+
+.TOKENOMICS{
+    transform: translateY(-350px);
+    scale: 0.8;
+}
+
+@media screen and (max-width : 992px){
+    .youtube{
+        width: 620px;
+        height: 403px;
+    }
+    .TOKENOMICS{
+        transform: translateY(-300px);
+    }
+}
+
+@media screen and (max-width : 768px){
+    .youtube{
+        width: 496px;
+        height: 322px;
+    }
+}
+
+@media screen and (max-width : 576px){
+    .youtube{
+        width: 390px;
+        height: 257px;
+    }
+}
+
+
+@media screen and (max-width : 480px){
+    .youtube{
+        width: 350px;
+        height: 257px;
+    }
+    .TOKENOMICS{
+        transform: translateY(-200px);
+    }
+
+    .img-gradient, .img-gradient2{
+        position: relative
+    }
+    
+    .img-gradient::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    }
+    .img-gradient2::after{
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(rgb(0, 0, 0),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    }
+}
+
+footer{
+    background: #000208;
+}
+
