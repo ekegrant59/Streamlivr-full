@@ -72,7 +72,7 @@
     </div>
    
 
-     <main class="main" >
+     <main class="main pt-3" >
         
         <header class="container-fluid py-5 pb-sm-3 position-relative px-0">
             <div class="position-absolute bottom-0 start-0 img-bg img-mobile">
@@ -80,14 +80,16 @@
                     <img src="/assets/pics/IMAGE (1)b.png" alt="" class="img-fluid">
                 </div>
             </div>
-            <div class="py-3 py-sm-0">
+            <div class="py-5 py-sm-0">
                 <div class="d-flex justify-content-center py-5">
                     <div class="py-5 pb-sm-0 pt-sm-0">
-                        <p class="display-4 fw-bold ps-sm-5 ps-4 mb-5 lh-sm">Earn from <br> <span class="display-6">Live</span> Streaming <br> your <span id="change"></span></p>
-                        <p class="text-center fs-6 mb-5 px-4">Convert your livestream to NFTs and earn $STVR on the go  as you stream <br class="d-none d-sm-block"> and your content is streamed. Swap your $STVR for fiat.</p>
-                        <div class="text-center">
-                            <a href="" class="btn1 text-light p-3 me-5">Install App</a>
-                            <a href="" class="btn2 text-light p-3">Learn More</a>
+                        <div class="pt-5">
+                            <p class="display-4 fw-bold ps-sm-5 ps-4 mb-5 lh-sm">Earn from <br> <span class="display-6">Live</span> Streaming <br> your <span id="change"></span></p>
+                            <p class="text-center fs-6 mb-5 px-4">Convert your livestream to NFTs and earn $STVR on the go  as you stream <br class="d-none d-sm-block"> and your content is streamed. Swap your $STVR for fiat.</p>
+                            <div class="text-center">
+                                <a href="" class="btn1 text-light p-3 me-5">Install App</a>
+                                <a href="" class="btn2 text-light p-3">Learn More</a>
+                            </div>
                         </div>
                     </div>                
                 </div>
@@ -152,7 +154,22 @@
                         </div>
                     </div>
                     <div class="col-12 col-xl-4 text-center">
-                        <img src="/assets/pics/wallet screen iPhone 14 Pro 1.png" alt="" class="img-fluid">
+                        <div class="swiper swiper2">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                              <!-- Slides -->
+                              <div class="swiper-slide">
+                                <img src="/assets/pics/wallet screen iPhone 14 Pro 1.png" alt="" class="img-fluid">
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="/assets/pics/iPhone 14 Pro Max 1.png" alt="" class="img-fluid">
+                              </div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination swiper-pagination2"></div>
+                          
+                          </div>
+                        
                     </div>
                 </div>
             </div>
@@ -162,7 +179,7 @@
                 <div class="d-flex justify-content-center px-sm-5">
                     <div class="container-fluid px-sm-5">
                         <h1 class="fw-bold mb-5">Who are our users?</h1>
-                        <div class="swiper">
+                        <div class="swiper swiper1">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -444,7 +461,7 @@
 
     var typed = new Typed('#change', options);
 
-    const swiper = new Swiper('.swiper',{
+    const swiper1 = new Swiper('.swiper1',{
         direction: 'horizontal',
         loop: true,
         autoplay: {
@@ -452,6 +469,18 @@
         },
         slidesPerView: 1
     })
+
+    const swiper2 = new Swiper(".swiper2", {
+      pagination: {
+        el: ".swiper-pagination2",
+        type: 'bullets',
+        dynamicBullets: true,
+      },
+      loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+    });
 
     const form = document.getElementById('form');
     const disp = document.querySelector('.display')
