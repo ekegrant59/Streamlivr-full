@@ -31,12 +31,12 @@ const upload = multer({ storage: storage });
 const app = express() 
 const mongodb = process.env.MONGODB
 const secretkey = process.env.SECRET
-// mongoose.connect(mongodb)
-// .then(() => {
-//    console.log('Connection successful')
-// }).catch((err) => {
-//     console.log(err, "Connection failed")
-// })
+mongoose.connect(mongodb)
+.then(() => {
+   console.log('Connection successful')
+}).catch((err) => {
+    console.log(err, "Connection failed")
+})
 
 
 // app.enable('trust proxy')

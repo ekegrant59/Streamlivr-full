@@ -24,3 +24,33 @@ body{
     background-position-y: top;
     background-size: cover;
 }
+
+.myicons{
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.myicons p{
+    padding-bottom: 15px;
+}
+
+.footer-icons, .footer-text{
+    font-size: 12px !important;
+}
+
+@media screen and (max-width : 400px){
+    .myicons{
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    .icon-div{
+        padding-left: 5px !important;
+    }
+    .display-4{
+        font-size: 30px;
+    }
+    .display-6{
+        font-size: 25px;
+    }
+}

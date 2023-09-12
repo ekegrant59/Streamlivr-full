@@ -213,3 +213,16 @@ footer{
     background: #000208;
 }
 
+.icons{
+    text-decoration: none;
+    color: white;
+}
+
+.icons:hover{
+    color: blue;
+}
+
+.myicons{
+    font-size: 35px;
+    padding-left: 30px;
+}
