@@ -45,26 +45,39 @@
         </div>
     </div>
 
+
     <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-body">
                 <form id="form" >
+                    <div class="mb-3" id="name">
+                        <label for="name" class="form-label">Name </label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Creator Name" name="name" required>
+                    </div>
+                    <div class="mb-3" id="email">
+                        <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"  name="email" required>
+                    </div>
                     
-                    <input type="text" id="name" placeholder="Creator Name" name="name" required> <br>
-                    <input type="email" id="email" placeholder="Email" name="email" required> <br>
-                    <p style="display: none;" class="display">You have Successfully registered!</p>
-                    <select name="category" id="select">
-                        <option selected>Category</option>
-                        <option value="Gamer">Gamer</option>
-                        <option value="Investor">Investor</option>
-                        <option value="Creator">Content Creator</option>
-                        <option value="Artiste">Artiste</option>
-                    </select> <br>
-                    <p class="sel_Error">Please select a valid Catergory</p>
+                    <p style="display: none;" class="fs-2  display fw-bold text-success">You have Successfully registered!</p>
 
+                    <div class="mb-3" id="select">
+                        <label for="select" class="form-label">Please choose a Category</label>
+                       
+                        <select name="category" id="select" class="form-select">
+                            <option selected>Category</option>
+                            <option value="Gamer">Gamer</option>
+                            <option value="Investor">Investor</option>
+                            <option value="Creator">Content Creator</option>
+                            <option value="Artiste">Artiste</option>
+                        </select>
+                    </div>
+
+                    <p class="sel_Error text-danger fw-bold">Please select a valid Catergory</p>
+
+                    <button type="submit" id="join" class="btn btn1 px-3 py-2 text-light">Join waitlist</button>
                     
-                    <button type="submit" id="join">Join</button>
                 </form>
             </div>
           </div>
@@ -81,7 +94,7 @@
                 </div>
             </div>
             <div class="pt-5 py-sm-0">
-                <div class="py-5 pt-sm-0 pb-sm-5 pb-sm-0">
+                <div class="pt-5 pt-sm-0 pb-0">
                     <div class="row container-fluid mx-0 pe-0">
                         <div class="col-1 align-self-end myicons d-block d-sm-none">
                             <p><a href="https://t.me/streamlivr" target="_blank" class="icons"><i class="bi bi-telegram"></i></a></p>
@@ -100,10 +113,13 @@
                                         </p>
                                         <p class="text-center fs-6 mb-5 pe-3">Convert your livestream to NFTs and earn $STVR on the go  as you stream <br class="d-none d-sm-block"> and your content is streamed. Swap your $STVR for fiat.</p>
                                         <div class="text-center">
-                                            <a href="" class="btn1 text-light p-3 me-3">Install App</a>
+                                            <!-- <a href="" class="btn1 text-light p-3 me-3">Install App</a> -->
+                                            <button type="button" class="btn btn1 text-light p-3 me-2 my-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                Join waitlist
+                                              </button>
                                             <a href="https://www.docs.streamlivr.com" class="btn2 text-light p-3">Learn More</a>
                                         </div>
-                                        <div class="myicons d-none d-sm-block pt-5 text-center" >
+                                        <div class="myicons d-none d-sm-block pt-4 text-center" >
                                             <a href="https://t.me/streamlivr" target="_blank" class="icons p-2"><i class="bi bi-telegram"></i></a>
                                             <a href=" https://discord.gg/NrWhKnVt" target="_blank" class="icons p-2"><i class="bi bi-discord"></i></a>
                                             <a href="https://x.com/streamlivr_app" target="_blank" class="icons p-2"><i class="bi bi-twitter-x"></i></a>
@@ -676,6 +692,7 @@
     const form = document.getElementById('form');
     const disp = document.querySelector('.display')
     const selError = document.querySelector('.sel_Error')
+    selError.style.display = 'none'
  
     form.addEventListener('submit', function(e) {
         e.preventDefault()

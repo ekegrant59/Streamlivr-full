@@ -48,6 +48,10 @@ body{
     background: #000;
 }
 
+.modal{
+    --bs-modal-bg: #205374;
+}
+
 .img-bg{
     z-index: -1;
 }
@@ -178,21 +182,21 @@ body{
         height: 257px;
     }
     
-        .myicons{
-            font-size: 20px;
-            padding-left: 0px;
-        }
-    
-        .icon-div{
-            padding-left: 5px !important;
-        }
-        .display-4{
-            font-size: 30px;
-            
-        }
-        .display-6{
-            font-size: 25px;
-        }
+    .myicons{
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    .icon-div{
+        padding-left: 5px !important;
+    }
+    .display-4{
+        font-size: 30px;
+        
+    }
+    .display-6{
+        font-size: 25px;
+    }
     
 }
 
