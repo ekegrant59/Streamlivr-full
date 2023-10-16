@@ -5,43 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/style.css" >
-    <link rel="stylesheet" href="../assets/mobile.css" media="only screen and (max-width: 480px)">
-    <link rel="shortcut icon" href="../assets/pics/streamlivr.png" type="image/x-icon">
+    <%- include('partials/head-links') %>
 </head>
 <body>
     <div class="d-flex align-items-center">
         <h1 class="text-center mt-3 mx-auto">WAITLISTED USERS</h1>
         <!-- <a href="/admin/blog" class="btn btn-primary me-4">Blogs</a> -->
     </div>
-    <div class="row container-fluid text-center mt-3 listed">
+    <div class="row container-fluid text-center mt-3 px-3">
         <div class="col-3">
             <p >NAME</p>
         </div>
-        <div class="col-6 no-pad">
+        <div class="col-6 ">
             <p>EMAIL</p>
         </div>
-        <div class="col-3 no-pad">
+        <div class="col-3">
             <p>CATEGORY</p>
         </div>
     </div>
-    <ol>
+   <div class="px-2">
+    <ol >
         <% users.forEach(user =>{ %>
             <li class="mt-1">
-                <div class="row container-fluid text-center listed">
-                    <div class="col-3 wrap2"><%= user.name %> </div>
-                    <div class="col-6 wrap"><%= user.email %></div>
-                    <div class="col-3 wrap text-center no-pad" ><%= user.category %></div>
+                <div class="row container-fluid text-center">
+                    <div class="col-3 overflow-scroll"><%= user.name %> </div>
+                    <div class="col-6 overflow-x-scroll"><%= user.email %></div>
+                    <div class="col-3 overflow-x-scroll" ><%= user.category %></div>
                 </div>
             </li>
         <% }) %>
     </ol>
+   </div>
     
 </body>
 </html>
