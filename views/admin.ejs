@@ -28,9 +28,9 @@
         <% users.forEach(user =>{ %>
             <li class="mt-1">
                 <div class="row container-fluid text-center">
-                    <div class="col-3 overflow-scroll"><%= user.name %> </div>
-                    <div class="col-6 overflow-x-scroll"><%= user.email %></div>
-                    <div class="col-3 overflow-x-scroll" ><%= user.category %></div>
+                    <div class="col-3 overflow-auto"><%= user.name %> </div>
+                    <div class="col-6 overflow-x-auto"><%= user.email %></div>
+                    <div class="col-3 overflow-x-auto" ><%= user.category %></div>
                 </div>
             </li>
         <% }) %>
