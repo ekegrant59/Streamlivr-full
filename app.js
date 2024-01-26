@@ -12,6 +12,7 @@ const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const multer = require("multer");
 const session = require('express-session')
+const fs = require('fs')
 
 cloudinary.config({
   cloud_name: "dvk93z9vj",
@@ -64,6 +65,10 @@ app.use(function (req, res, next) {
 app.get('/', function(req,res){ 
     res.render('index')
 
+})
+
+app.get('/.well-known/assetlinks.json', (req,res)=>{
+    res.render()
 })
 
 // app.get('/blog', (req,res)=>{
@@ -242,6 +247,21 @@ app.post('/login', (req,res)=>{
     })
   }) .catch((err)=>{console.log(err)})
 })
+
+app.get('/exportwaitlist', async (req,res)=>{
+    const waitlist = await userSchema.find()
+    const waitliststring = JSON.stringify(waitlist)
+    // console.log(waitliststring)
+    fs.writeFileSync('waitlist.json', waitliststring, (err)=>{
+        if (err){console.log(err)}
+    })
+    const waitlistfile = __dirname+'/waitlist.json'
+    // fs.readFile(waitlistfile, 'utf8', (err,data)=>{
+    //     console.log(data)
+    // })
+    res.download(waitlistfile)
+})
+
 const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{
