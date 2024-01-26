@@ -1,0 +1,13 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "kn.streamlivr.app",
+        "sha256_cert_fingerprints":
+          ["0A:27:4E:9A:1A:C5:B9:00:71:90:28:5B:DA:73:A9:36:D7:4C:53:2F:EC:4B:1A:77:BC:97:3B:4F:19:25:9F:86"]
+      }
+    }
+  ]
+  
+  
